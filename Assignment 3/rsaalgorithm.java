@@ -1,0 +1,70 @@
+import java.util.Random;
+
+public class rsaalgorithm {
+
+    static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a % b);
+    }
+
+    static boolean isprime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+
+    }
+
+    public static void main(String[] args) {
+        if (args.length == 2) {
+            int p = Integer.parseInt(args[0]);
+            int q = Integer.parseInt(args[1]);
+            if ((isprime(p)) && (isprime(q))) {
+                int n;
+                int d = 0; // initialize d
+                n = p * q;
+                int euler = (p - 1) * (q - 1);
+                System.out.println("n = " + n);
+                System.out.println("ø = " + euler);
+                int e;
+
+                Random rand = new Random();
+                int max = euler - 1;
+                int min = 2;
+
+                do {
+                    e = rand.nextInt(max - min) + min;
+                    if (gcd(e, euler) == 1) {
+                        System.out.println("e = " + e);
+                        break;
+                    }
+                } while (true);
+
+                while (0 <= d && d <= n) {
+                    if (e * d % euler == 1) {
+                        System.out.println("d = " + d);
+                        break;
+                    }
+                    d++;
+                }
+            } else {
+                System.out.println("Some of the provided numbers are not Prime");
+            }
+
+        } else if (args.length == 1) {
+            System.out.println("Program arguments incomplete");
+        } else if (args.length < 1) {
+            System.out.println("No command line arguments provided");
+        } else {
+            System.out.println("Argument length exceeded");
+        }
+    }
+}
