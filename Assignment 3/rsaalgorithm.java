@@ -36,10 +36,13 @@ public class RsaAlgorithm {
                 int euler = (p - 1) * (q - 1);
                 System.out.println("n = " + n);
                 System.out.println("ø = " + euler);
+                if ((p == 2 && q == 3) || (p == 3 && q == 2)) {
+                    System.out.println("Random Encryption key e cannot be generated with negative bounds");
+                    return;
+                }
                 int e;
-
                 Random rand = new Random();
-                int max = euler - 1;
+                int max = euler;
                 int min = 2;
 
                 do {
@@ -48,7 +51,7 @@ public class RsaAlgorithm {
                         System.out.println("e = " + e);
                         break;
                     }
-                } while (true);
+                } while (e < euler);
 
                 while (0 <= d && d <= n) {
                     if (e * d % euler == 1) {
