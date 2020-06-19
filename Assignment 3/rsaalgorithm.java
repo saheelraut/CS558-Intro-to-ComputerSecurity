@@ -1,7 +1,8 @@
 import java.util.Random;
 
-public class rsaalgorithm {
+public class RsaAlgorithm {
 
+    // method to calculate gcd
     static int gcd(int a, int b) {
         if (b == 0) {
             return a;
@@ -9,7 +10,8 @@ public class rsaalgorithm {
         return gcd(b, a % b);
     }
 
-    static boolean isprime(int number) {
+    // method to check whether the entered numbers are prime
+    static boolean isPrime(int number) {
         if (number <= 1) {
             return false;
         }
@@ -27,7 +29,7 @@ public class rsaalgorithm {
         if (args.length == 2) {
             int p = Integer.parseInt(args[0]);
             int q = Integer.parseInt(args[1]);
-            if ((isprime(p)) && (isprime(q))) {
+            if ((isPrime(p)) && (isPrime(q))) {
                 int n;
                 int d = 0; // initialize d
                 n = p * q;
