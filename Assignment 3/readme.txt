@@ -6,6 +6,6 @@ Code Tested on : remote.cs.binghamton.edu
 -----------------------------------------------------------------------
 Steps to Compile and Execute the program: 
 1.Run the following command to Compile the program:
- javac rsaalgorithm.java
+ javac RsaAlgorithm.java
 2.Run the following command to Execute the program:
- java rsaalgorithm <prime number> <prime number>
+ java RsaAlgorithm <prime number> <prime number>
