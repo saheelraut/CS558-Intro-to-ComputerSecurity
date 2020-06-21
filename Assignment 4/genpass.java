@@ -49,12 +49,7 @@ public class genpass {
 
 	public static String encrypt(String password_original, String secretKey2) throws UnsupportedEncodingException,
 			NoSuchAlgorithmException, NoSuchPaddingException, BadPaddingException, IllegalBlockSizeException {
-		MessageDigest sha = null;
-		key = secretKey2.getBytes("UTF-8");
-		sha = MessageDigest.getInstance("SHA-1");
-		key = sha.digest(key);
-		key = Arrays.copyOf(key, 16);
-		secretKey = new SecretKeySpec(key, "AES");
+		setKey(secretKey2);
 		Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
 		try {
 			cipher.init(Cipher.ENCRYPT_MODE, secretKey);
@@ -63,4 +58,16 @@ public class genpass {
 		}
 		return Base64.getEncoder().encodeToString(cipher.doFinal(password_original.getBytes("UTF-8")));
 	}
+
+	public static void setKey(String myKey) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+		MessageDigest sha = null;
+
+		key = myKey.getBytes("UTF-8");
+		sha = MessageDigest.getInstance("SHA-1");
+		key = sha.digest(key);
+		key = Arrays.copyOf(key, 16);
+		secretKey = new SecretKeySpec(key, "AES");
+
+	}
+
 }
