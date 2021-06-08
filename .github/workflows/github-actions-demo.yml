@@ -16,5 +16,4 @@ jobs:
       - name: Run Projects
         run: 
         pwd
-        cd Assignment-1
         pwd
