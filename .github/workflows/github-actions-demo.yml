@@ -13,5 +13,8 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Build with Maven
-        run: pwd
+      - name: Run Projects
+        run: 
+        pwd
+        cd Assignment-1
+        pwd
