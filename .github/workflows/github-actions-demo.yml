@@ -15,4 +15,4 @@ jobs:
           distribution: 'adopt'
       - name: Run Projects
         run: 
-        pwd
+            pwd
