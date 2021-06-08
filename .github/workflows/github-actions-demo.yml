@@ -13,3 +13,5 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+      - working-directory: ./Assignment\ 1
+      - run: javac Monoalphabeticcipher.java
