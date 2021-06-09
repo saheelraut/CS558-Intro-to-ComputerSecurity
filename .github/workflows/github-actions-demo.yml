@@ -18,4 +18,4 @@ jobs:
             pwd
             cd Assignment-1
             pwd
-            java -cp java Monoalphabeticcipher
+            javac Monoalphabeticcipher.java
