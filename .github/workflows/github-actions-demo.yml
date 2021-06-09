@@ -19,3 +19,4 @@ jobs:
             cd Assignment-1
             pwd
             javac Monoalphabeticcipher.java
+            
